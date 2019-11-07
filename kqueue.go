@@ -196,7 +196,7 @@ func (w *Watcher) addWatch(name string, flags uint32) (string, error) {
 		// be no file events for broken symlinks.
 		// Hence the returns of nil on errors.
 		if fi.Mode()&os.ModeSymlink == os.ModeSymlink {
-			name, err = filepath.EvalSymlinks(name)
+			// name, err = filepath.EvalSymlinks(name)
 			if err != nil {
 				return "", nil
 			}
